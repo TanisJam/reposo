@@ -3,4 +3,5 @@ export const LINKS = {
   forgottenWiki: 'https://forgottenrealms.fandom.com',
   tools: 'https://5e.tools',
   atlas: 'https://www.aidedd.org/public/atlas',
+  reference: 'https://homebrewery.naturalcrit.com/share/RZ74iEuYltmy',
 };

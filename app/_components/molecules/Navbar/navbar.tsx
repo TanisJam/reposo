@@ -58,6 +58,15 @@ export default function Navbar() {
                   Mapa de Faerun
                 </Link>
               </li>
+              <li>
+                <Link
+                  target="_blank"
+                  className="flex gap-2 hover:underline focus:text-black active:text-accent active:font-extrabold underline-offset-4 decoration-accent"
+                  href={LINKS.reference}
+                >
+                  Referencia Custom
+                </Link>
+              </li>
             </ul>
           </div>
         </li>
