@@ -46,6 +46,13 @@ To run this project on your local machine, follow these steps:
 
 5. Open your browser and visit http://localhost:3000.
 
+## Planned Features
+
+- [ ] Announcements: Important announcements regarding events, missions updates, and more.
+- [ ] Mission Reports: A dedicated area to share and view reports of recent missions.
+- [ ] DM Content Generation: A section for Dungeon Masters (DMs) to create and share content for their campaigns.
+- [ ] Marketplace: A marketplace to view all available items and services for players characters can purchase.
+
 ## Contributing
 
 Contributions are welcome! If you would like to contribute to this project, please follow these steps:

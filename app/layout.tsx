@@ -18,6 +18,8 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/crow.svg" sizes="any" />
+        <title>El Reposo del Cuervo</title>
       </head>
       <body className="font-merriweather border-[6px] lg:border-[13px] border-base-100 ">
         <Navbar />
