@@ -73,3 +73,12 @@ html {
     transform: rotate(1.4deg);
   }
 }
+
+.menu li > *:not(ul, .menu-title, details, .btn):active,
+.menu li > *:not(ul, .menu-title, details, .btn).active,
+.menu li > details > summary:active {
+  --tw-bg-opacity: 1;
+  background-color: unset;
+  --tw-text-opacity: unset;
+  color: unset;
+}

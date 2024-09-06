@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { Discord } from '@/atoms/Icons';
+import { LINKS } from '@/app/_lib/links';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -25,10 +27,14 @@ export default function Hero() {
             Únete al gremio de aventureros más intrépido de Silverymoon.
             <br /> Forja tu leyenda en nuestro servidor West Marches.
           </p>
-          <button className="btn btn-primary font-merriweather uppercase text-gray-700 md:mt-2">
+          <Link
+            target="_blank"
+            href={LINKS.discordInvite}
+            className="btn btn-primary font-merriweather uppercase text-gray-700 md:mt-2"
+          >
             <Discord />
             Únete al Gremio
-          </button>
+          </Link>
         </div>
       </div>
     </div>

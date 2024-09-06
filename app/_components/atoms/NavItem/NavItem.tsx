@@ -5,12 +5,14 @@ interface NavItemProps {
   children: ReactNode;
   link: string;
   variant?: 'primary' | 'default';
+  className?: string;
 }
 
 export default function NavItem({
   children,
   link,
   variant = 'default',
+  className,
 }: NavItemProps) {
   return (
     <li className="flex row items-center py-2 px-4">
