@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# El Reposo Del Cuervo Landing Page
 
-## Getting Started
+El Reposo Del Cuervo is the name of a Discord server that organizes and run D&D rol sessions. To promote the server, I've created a landing page that includes information about the server, its rules, and how to join. The page is designed to be visually appealing and user-friendly.
+This page is built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Responsive Design**: The page adapts to different screen sizes.
+- **Interactivity**: Utilizes Next.js capabilities for a smooth user experience.
+- **Modern Styling**: Implements Tailwind CSS for an attractive and customizable design.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/) - React framework for web applications.
+- [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript that adds static typing.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
+- [DaisyUI](https://daisyui.com/) - A Tailwind CSS component library for faster UI development.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+To run this project on your local machine, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/TanisJam/reposo.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Navigate to the project directory:
 
-## Deploy on Vercel
+   ```bash
+     cd reposo
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install the dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and visit http://localhost:3000.
+
+## Contributing
+
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+
+- 1. Fork the repository.
+- 2. Create a new branch (`git checkout -b feature/new-feature`).
+- 3. Make your changes and commit (`git commit -m 'Add new feature'`).
+- 4. Push to the branch (`git push origin feature/new-feature`).
+- 5. Open a Pull Request.
+
+## Contact
+
+If you have any questions or suggestions, feel free to message me.
+I hope to see you in a game!

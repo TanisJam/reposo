@@ -1,3 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  --primary-color: #8caaee;
+  --secondary-color: #ffc49b;
+  --accent-color: #d1495b;
+  --neutral-color: #232634;
+  --base-100-color: #303446;
+  --info-color: #85c1dc;
+  --success-color: #a6d189;
+  --warning-color: #e5c890;
+  --error-color: #e78284;
+  --bg-color: #f1eee4;
+  --bg-color-darker: #ddc6b3;
+  --bg-color-lightest: #f7f4ee;
+
+  body {
+    background-color: var(--bg-color);
+    background: linear-gradient(190deg, #eeddbec7 0%, #ddcda9c7 100%),
+      url(/assets/noise.svg) left top / 900px 900px repeat,
+      url(/assets/noise-sm.svg) left top / 900px 900px repeat,
+      url(/assets/dots.svg) left top / 540px 405px repeat;
+  }
+}
+
+.btn {
+  @apply rounded-none;
+}
+
+.btn-primary {
+  @apply border-base-100 border border-solid;
+  background-color: var(--bg-color);
+  &:hover {
+    background-color: var(--bg-color-lightest);
+    @apply border-x-base-200 border border-solid text-neutral shadow-lg;
+  }
+}
+
+.letter {
+  background: #fafafa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
+    0 0 300px 25px rgba(222, 198, 122, 0.7) inset;
+
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2),
+      inset 0 0 300px rgba(222, 198, 122, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+  }
+
+  &:before {
+    left: -5px;
+    top: 2px;
+    transform: rotate(-1.5deg);
+  }
+
+  &:after {
+    right: -3px;
+    top: 0px;
+    transform: rotate(1.4deg);
+  }
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn):active,
+.menu li > *:not(ul, .menu-title, details, .btn).active,
+.menu li > details > summary:active {
+  --tw-bg-opacity: 1;
+  background-color: unset;
+  --tw-text-opacity: unset;
+  color: unset;
+}
