@@ -19,7 +19,22 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/crow.svg" sizes="any" />
-        <title>El Reposo del Cuervo</title>
+        <title>Reposo del Cuervo - D&D Discord Server</title>
+        <meta
+          name="description"
+          content="Únete a nosotros en Reposo del Cuervo, un servidor de Discord dedicado a organizar partidas de rol de Dungeons & Dragons (D&D). ¡Explora aventuras, conéctate con otros jugadores y desata tu creatividad!"
+        />
+        <meta
+          property="og:title"
+          content="Reposo del Cuervo - D&D Discord Server"
+        />
+        <meta
+          property="og:description"
+          content="Únete a nosotros en Reposo del Cuervo, un servidor de Discord dedicado a organizar partidas de rol de Dungeons & Dragons (D&D). ¡Explora aventuras, conéctate con otros jugadores y desata tu creatividad!"
+        />
+        <meta property="og:image" content="/reposo.webp" />
+        <meta property="og:url" content="https://elreposodelcuervo.mnr.ar" />
+        <meta property="og:type" content="website" />
       </head>
       <body className="font-merriweather border-[6px] lg:border-[13px] border-base-100 ">
         <Navbar />

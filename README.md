@@ -1,4 +1,6 @@
-# El Reposo Del Cuervo Landing Page
+![landing page](/public/assets/screenshot.webp)
+
+# El Reposo Del Cuervo [Landing Page](https://elreposodelcuervo.mnr.ar/)
 
 El Reposo Del Cuervo is the name of a Discord server that organizes and run D&D rol sessions. To promote the server, I've created a landing page that includes information about the server, its rules, and how to join. The page is designed to be visually appealing and user-friendly.
 This page is built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
