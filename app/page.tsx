@@ -28,7 +28,7 @@ export default function Home() {
           un nuevo y emocionante gremio de aventureros.
         </p>
         <p className="text-lg">
-          Ahora, La Posada del Enano Errante es el punto de partida para
+          Ahora, El Reposo del Cuervo es el punto de partida para
           incontables historias épicas y el lugar donde los héroes se reúnen
           para compartir sus hazañas.
         </p>
