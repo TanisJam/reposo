@@ -16,9 +16,9 @@ const config: Config = {
       },
       fontFamily: {
         merriweather: ['Merriweather', 'serif'],
-        bona_nova: ['Bona Nova', 'serif'],
+        bona_nova: ['Bona Nova SC', 'serif'],
         nanum_gothic: ['Nanum Gothic Coding', 'monospace'],
-        junge_regular: ['Junge Regular', 'cursive'],
+        junge_regular: ['Junge', 'serif'],
       },
     },
   },

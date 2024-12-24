@@ -17,7 +17,7 @@ export default function Navbar() {
       </div>
 
       <ul className="flex font-nanum_gothic font-normal uppercase text-base divide-x divide-solid divide-base-100 ">
-        <NavItem link="#story">Historia</NavItem>
+        <NavItem link="/#story">Historia</NavItem>
         <li className="flex row items-center py-2 px-4">
           <div className="dropdown dropdown-bottom dropdown-end">
             <div
