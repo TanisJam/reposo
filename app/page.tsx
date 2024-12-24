@@ -28,9 +28,9 @@ export default function Home() {
           un nuevo y emocionante gremio de aventureros.
         </p>
         <p className="text-lg">
-          Ahora, El Reposo del Cuervo es el punto de partida para
-          incontables historias épicas y el lugar donde los héroes se reúnen
-          para compartir sus hazañas.
+          Ahora, El Reposo del Cuervo es el punto de partida para incontables
+          historias épicas y el lugar donde los héroes se reúnen para compartir
+          sus hazañas.
         </p>
       </Section>
 
@@ -69,14 +69,14 @@ export default function Home() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
-            <D20_1 className="w-16 h-16 fill-red-700 mx-auto mb-2" />
+            <D20_1 className="w-16 h-16 fill-red-700 mx-auto mb-2 hover:animate-spin " />
             <h3 className="text-xl font-semibold mb-2">Aventuras Épicas</h3>
             <p>
               Misiones emocionantes y desafíos únicos te esperan en cada sesión.
             </p>
           </div>
           <div className="text-center">
-            <Wizard className="w-16 h-16 fill-violet-700 stroke-violet-700 mx-auto mb-2" />
+            <Wizard className="w-16 h-16 fill-violet-700 stroke-violet-700 mx-auto mb-2 hover:animate-ping" />
             <h3 className="text-xl font-semibold mb-2">Comunidad Acogedora</h3>
             <p>
               Únete a una comunidad amigable de jugadores apasionados por el
@@ -84,7 +84,7 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center">
-            <Scroll className="w-16 h-16 fill-yellow-600  mx-auto mb-2" />
+            <Scroll className="w-16 h-16 fill-yellow-600 mx-auto mb-2 hover:animate-bounce" />
             <h3 className="text-xl font-semibold mb-2">Rico Rico Lore</h3>
             <p>
               Sumérgete en un mundo lleno de historias, misterios y magia por
