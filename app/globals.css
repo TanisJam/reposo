@@ -23,9 +23,7 @@ html {
   body {
     background-color: var(--bg-color);
     background: linear-gradient(190deg, #eeddbec7 0%, #ddcda9c7 100%),
-      url(/assets/noise.svg) left top / 900px 900px repeat,
-      url(/assets/noise-sm.svg) left top / 900px 900px repeat,
-      url(/assets/dots.svg) left top / 540px 405px repeat;
+      url(/assets/paper.webp) left top / 900px 900px repeat;
   }
 }
 
