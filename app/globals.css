@@ -7,71 +7,226 @@
 @tailwind utilities;
 
 html {
-  --primary-color: #8caaee;
-  --secondary-color: #ffc49b;
-  --accent-color: #d1495b;
-  --neutral-color: #232634;
-  --base-100-color: #303446;
-  --info-color: #85c1dc;
-  --success-color: #a6d189;
-  --warning-color: #e5c890;
-  --error-color: #e78284;
-  --bg-color: #f1eee4;
-  --bg-color-darker: #ddc6b3;
-  --bg-color-lightest: #f7f4ee;
+  --primary-color: #ff9c20;
+  --secondary-color: #d1495b;
+  --accent-color: #ffb84a;
+  --neutral-color: #0d0a07;
+  --base-100-color: #14100b;
+  --base-200-color: #1d160f;
+  --base-300-color: #2a1f15;
+  --bg-color: #14100b;
+  --bg-color-darker: #0d0a07;
+  --bg-color-lightest: #1d160f;
+  --parchment-100: #f1eee4;
+  --parchment-200: #e7dec5;
+  --parchment-300: #ddc6b3;
+  --warm-glow: 255, 156, 32;
+  --candle-glow: 255, 184, 74;
+  scroll-behavior: smooth;
 
   body {
-    background-color: var(--bg-color);
-    background: linear-gradient(190deg, #eeddbec7 0%, #ddcda9c7 100%),
-      url(/assets/paper.webp) left top / 900px 900px repeat;
+    color: #e9dcc0;
+    background-color: var(--bg-color-darker);
+    background-image:
+      radial-gradient(
+        ellipse at 20% 0%,
+        rgba(217, 94, 2, 0.08) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse at 80% 100%,
+        rgba(122, 47, 13, 0.18) 0%,
+        transparent 55%
+      ),
+      linear-gradient(180deg, #0d0a07 0%, #14100b 50%, #0d0a07 100%);
+    background-attachment: fixed;
   }
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/assets/noise-sm.svg');
+  background-size: 220px 220px;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Buttons */
 .btn {
-  @apply rounded-none;
+  @apply rounded-none transition-all duration-300;
 }
 
-.btn-primary {
-  @apply border-base-100 border border-solid;
-  background-color: var(--bg-color);
-  &:hover {
-    background-color: var(--bg-color-lightest);
-    @apply border-x-base-200 border border-solid text-neutral shadow-lg;
-  }
+.btn-ember {
+  @apply border border-solid uppercase tracking-wider font-merriweather;
+  background: linear-gradient(180deg, #ff9c20 0%, #d95e02 100%);
+  border-color: rgba(255, 234, 198, 0.45);
+  color: #14100b;
+  box-shadow:
+    0 0 0 1px rgba(255, 184, 74, 0.25) inset,
+    0 10px 30px -10px rgba(217, 94, 2, 0.6),
+    0 0 60px -15px rgba(255, 156, 32, 0.6);
+  text-shadow: 0 1px 0 rgba(255, 234, 198, 0.4);
+}
+.btn-ember:hover {
+  background: linear-gradient(180deg, #ffb84a 0%, #f57b07 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 234, 198, 0.45) inset,
+    0 14px 40px -8px rgba(245, 123, 7, 0.85),
+    0 0 90px -10px rgba(255, 156, 32, 0.85);
+  transform: translateY(-1px);
+}
+.btn-ember:active {
+  transform: translateY(0);
 }
 
+.btn-ghost-warm {
+  @apply uppercase tracking-wider font-merriweather text-parchment-200;
+  background: transparent;
+  border: 1px solid rgba(255, 184, 74, 0.35);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost-warm:hover {
+  background: rgba(255, 156, 32, 0.08);
+  border-color: rgba(255, 184, 74, 0.7);
+  color: #ffeac6;
+  box-shadow: 0 0 40px -12px rgba(255, 156, 32, 0.6);
+}
+
+/* Parchment letter — sits on dark background, lit by warm candle glow */
 .letter {
-  background: #fafafa;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3),
-    0 0 300px 25px rgba(222, 198, 122, 0.7) inset;
-
   position: relative;
-
-  &:before,
-  &:after {
-    content: '';
-    background: #fafafa;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2),
-      inset 0 0 300px rgba(222, 198, 122, 0.7);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -2;
-  }
-
-  &:before {
-    left: -5px;
-    top: 2px;
-    transform: rotate(-1.5deg);
-  }
-
-  &:after {
-    right: -3px;
-    top: 0px;
-    transform: rotate(1.4deg);
-  }
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255, 234, 198, 0.85) 0%,
+      rgba(241, 238, 228, 0.95) 35%,
+      #f1eee4 100%
+    ),
+    url('/assets/paper.webp') left top / 900px 900px repeat;
+  background-blend-mode: multiply;
+  color: #2a1f15;
+  box-shadow:
+    0 0 0 1px rgba(120, 80, 30, 0.25),
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 80px -10px rgba(255, 156, 32, 0.35),
+    inset 0 0 120px rgba(190, 140, 60, 0.25);
+}
+.letter::before,
+.letter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+  box-shadow:
+    0 0 0 1px rgba(120, 80, 30, 0.2),
+    0 8px 25px rgba(0, 0, 0, 0.45);
+}
+.letter::before {
+  left: -6px;
+  top: 4px;
+  transform: rotate(-1.4deg);
+}
+.letter::after {
+  right: -4px;
+  top: 1px;
+  transform: rotate(1.2deg);
 }
 
+.letter-glow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 156, 32, 0.22) 0%,
+    rgba(255, 156, 32, 0.08) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -2;
+  filter: blur(20px);
+}
+
+/* Headline gradient — golden / candle */
+.headline-glow {
+  background: linear-gradient(
+    180deg,
+    #ffeac6 0%,
+    #ffb84a 55%,
+    #d95e02 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(255, 156, 32, 0.4))
+    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+
+/* Section heading on dark sections (above parchment letter) */
+.eyebrow {
+  @apply font-nanum_gothic uppercase tracking-[0.4em] text-xs;
+  color: rgba(255, 184, 74, 0.7);
+}
+
+/* Vignette utility */
+.vignette {
+  position: relative;
+}
+.vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 35%,
+    rgba(13, 10, 7, 0.55) 75%,
+    rgba(13, 10, 7, 0.95) 100%
+  );
+  pointer-events: none;
+}
+
+/* Ember particle (single dot) */
+.ember-dot {
+  position: absolute;
+  bottom: -10px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 220, 140, 0.95) 0%,
+    rgba(255, 156, 32, 0.6) 50%,
+    transparent 80%
+  );
+  box-shadow: 0 0 6px 1px rgba(255, 156, 32, 0.55);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Soft top-bottom transition between dark and section reveals */
+.section-fade-edges {
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+/* Navbar / dropdown overrides for dark theme */
 .menu li > *:not(ul, .menu-title, details, .btn):active,
 .menu li > *:not(ul, .menu-title, details, .btn).active,
 .menu li > details > summary:active {
@@ -79,4 +234,14 @@ html {
   background-color: unset;
   --tw-text-opacity: unset;
   color: unset;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .ember-dot,
+  .animate-ember,
+  .animate-flicker,
+  .animate-glowPulse {
+    animation: none !important;
+  }
 }

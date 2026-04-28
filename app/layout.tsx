@@ -51,12 +51,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" data-theme="cuervo">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/crow.svg" sizes="any" />
       </head>
-      <body className="font-merriweather border-[6px] lg:border-[13px] border-base-100 ">
+      <body className="font-merriweather text-parchment-200 antialiased overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />

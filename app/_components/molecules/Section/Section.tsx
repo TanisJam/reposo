@@ -1,52 +1,59 @@
-import * as motion from 'motion/react-client';
-import type { Variants } from 'motion/react';
-import { ReactNode, useMemo } from 'react';
+'use client';
+
+import { motion } from 'motion/react';
+import { ReactNode } from 'react';
 
 interface SectionProps {
   children?: ReactNode;
   className?: string;
   title?: string;
+  eyebrow?: string;
+  tilt?: number;
+  id?: string;
 }
 
-export default function Section({ children, className, title }: SectionProps) {
-  const cardVariants: Variants = useMemo(
-    () => ({
-      offscreen: {
-        y: 0,
-        x: Math.floor(Math.random() * 11) - 5,
-        rotate: Math.floor(Math.random() * 7) - 3,
-      },
-      onscreen: {
-        y: -10,
-        x: 0,
-        rotate: 0,
-        transition: {
-          type: 'spring',
-          bounce: 0.4,
-          duration: 0.4,
-        },
-      },
-    }),
-    []
-  );
+export default function Section({
+  children,
+  className = '',
+  title,
+  eyebrow,
+  tilt = 0,
+  id,
+}: SectionProps) {
   return (
-    <motion.section
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
+    <section
+      id={id}
+      className="relative w-full px-4 sm:px-8 py-20 md:py-32 flex justify-center"
     >
       <motion.div
-        className={`m-8 py-16 pt-8 px-4 md:px-8 container mx-auto max-w-5xl 
-      ${className}`}
-        variants={cardVariants}
+        initial={{ opacity: 0, y: 60, rotate: tilt - 1 }}
+        whileInView={{ opacity: 1, y: 0, rotate: tilt }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{
+          duration: 1,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="relative w-full max-w-3xl"
+        style={{ transformOrigin: 'center top' }}
       >
-        <div className="max-w-3xl mx-auto p-8 flex flex-col">
-          <h2 className="text-3xl text-center md:text-4xl font-junge_regular font-bold mb-6">
-            {title}
-          </h2>
-          {children}
+        <div className="letter-glow" />
+        <div
+          className={`letter relative px-6 py-12 sm:px-12 sm:py-16 md:px-16 md:py-20 ${className}`}
+        >
+          {eyebrow && (
+            <p className="eyebrow text-center mb-4 text-ember-700/80">
+              {eyebrow}
+            </p>
+          )}
+          {title && (
+            <h2 className="font-junge_regular text-center text-3xl md:text-5xl font-bold mb-10 text-wood-800">
+              {title}
+              <span className="block w-16 h-px mx-auto mt-5 bg-gradient-to-r from-transparent via-ember-700 to-transparent" />
+            </h2>
+          )}
+          <div className="font-merriweather text-wood-700">{children}</div>
         </div>
       </motion.div>
-    </motion.section>
+    </section>
   );
 }

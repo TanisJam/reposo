@@ -8,16 +8,11 @@ interface NavItemProps {
   className?: string;
 }
 
-export default function NavItem({
-  children,
-  link,
-  variant = 'default',
-  className,
-}: NavItemProps) {
+export default function NavItem({ children, link }: NavItemProps) {
   return (
-    <li className="flex row items-center py-2 px-4">
+    <li className="flex items-center px-3 py-2">
       <Link
-        className="flex items-center gap-2 mx-auto my-auto text-xl hover:underline underline-offset-4 decoration-accent"
+        className="text-sm hover:text-ember-200 transition-colors"
         href={link}
       >
         {children}

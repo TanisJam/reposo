@@ -1,8 +1,10 @@
 import { Hero } from '@/molecules/Hero';
-import { LINKS } from '@/app/_lib/links';
+import { Section } from '@/molecules/Section';
+import { FeatureGrid } from '@/molecules/FeatureGrid';
+import { FinalCTA } from '@/molecules/FinalCTA';
+import { StickyCTA } from '@/atoms/StickyCTA';
 import {
   D20_1,
-  Discord,
   Explorer,
   Group,
   Hourglass,
@@ -10,106 +12,111 @@ import {
   Tree,
   Wizard,
 } from '@/atoms/Icons';
-import { Section } from '@/molecules/Section';
-import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between container mx-auto">
+    <main className="relative w-full overflow-x-hidden">
       <Hero />
-      <span id="story"></span>
+
+      {/* HISTORIA */}
       <Section
-        className="letter rotate-1 text-rose-950"
+        id="story"
+        eyebrow="Capítulo I"
         title="La Historia de Eradrin"
+        tilt={-1}
       >
-        <p className="text-lg mb-4">
-          Eradrin, un viejo enano aventurero, compró una posada abandonada en
-          Silverymoon. Con determinación y visión, la transformó en el hogar de
-          un nuevo y emocionante gremio de aventureros.
-        </p>
-        <p className="text-lg">
-          Ahora, El Reposo del Cuervo es el punto de partida para incontables
-          historias épicas y el lugar donde los héroes se reúnen para compartir
-          sus hazañas.
-        </p>
+        <div className="space-y-6 text-base sm:text-lg leading-relaxed">
+          <p className="first-letter:text-6xl first-letter:font-bona_nova first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:leading-[0.9] first-letter:text-ember-700">
+            Eradrin, un viejo enano aventurero curtido por mil caminos, llegó a
+            Silverymoon con el bolsillo vacío y los ojos llenos de historias.
+            Compró una posada abandonada — paredes torcidas, vigas podridas, un
+            cuervo viejo en el techo — y la transformó con martillo, terquedad
+            y una visión.
+          </p>
+          <p>
+            Hoy, El Reposo del Cuervo es el punto de partida de incontables
+            leyendas. Aquí los héroes se encuentran, comparten cerveza tibia y
+            secretos peligrosos, y parten hacia los rincones oscuros del mundo.
+          </p>
+          <p className="text-center pt-6 italic text-ember-700/80 font-bona_nova text-xl">
+            &mdash; Y vos, ¿qué historia vas a contar? &mdash;
+          </p>
+        </div>
       </Section>
 
+      {/* WEST MARCHES */}
       <Section
-        className="letter rotate-0 text-yellow-900"
+        eyebrow="Capítulo II"
         title="Estilo West Marches"
+        tilt={1}
       >
-        <p className="text-lg mb-4">
-          Nuestro servidor sigue el estilo West Marches, donde tú decides cuándo
-          y con quién aventurarte. Explora un mundo abierto, forma grupos
-          dinámicos y crea tu propia leyenda.
+        <p className="text-base sm:text-lg mb-8 leading-relaxed text-center">
+          No hay calendario. No hay grupos fijos. Vos decidís cuándo y con
+          quién aventurarte. El mundo está vivo, y te espera.
         </p>
-        <ul className="flex flex-col gap-4 fill-orange-500 text-lg">
-          <li className="flex items-center gap-2">
-            <Hourglass className="w-6 h-6 min-w-6" />
-            <p>Flexibilidad para jugar cuando quieras</p>
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-5 text-base">
+          <li className="flex items-start gap-3 group">
+            <Hourglass className="w-7 h-7 min-w-7 fill-ember-700 mt-0.5 group-hover:fill-ember-500 transition-colors" />
+            <span>
+              <strong className="text-wood-800">Flexibilidad total</strong> — jugá
+              cuando puedas, no cuando un schedule lo diga
+            </span>
           </li>
-          <li className="flex items-center gap-2">
-            <Group className="w-6 h-6 min-w-6" />
-            <p>Grupos cambiantes de aventureros</p>
+          <li className="flex items-start gap-3 group">
+            <Group className="w-7 h-7 min-w-7 fill-ember-700 mt-0.5 group-hover:fill-ember-500 transition-colors" />
+            <span>
+              <strong className="text-wood-800">Grupos cambiantes</strong> —
+              forjá vínculos en la mesa, no en una hoja de cálculo
+            </span>
           </li>
-          <li className="flex items-center gap-2">
-            <Tree className="w-6 h-6 min-w-6" />
-            <p>Un mundo persistente que evoluciona con tus acciones</p>
+          <li className="flex items-start gap-3 group">
+            <Tree className="w-7 h-7 min-w-7 fill-ember-700 stroke-ember-700 mt-0.5 group-hover:fill-ember-500 transition-colors" />
+            <span>
+              <strong className="text-wood-800">Mundo persistente</strong> — tus
+              acciones cambian Faerûn de verdad
+            </span>
           </li>
-          <li className="flex items-center gap-2">
-            <Explorer className="w-6 h-6 min-w-6" />
-            <p>Libertad para explorar y crear tu propia historia</p>
+          <li className="flex items-start gap-3 group">
+            <Explorer className="w-7 h-7 min-w-7 fill-ember-700 mt-0.5 group-hover:fill-ember-500 transition-colors" />
+            <span>
+              <strong className="text-wood-800">Libertad de explorar</strong> —
+              tu leyenda la escribís vos
+            </span>
           </li>
         </ul>
       </Section>
 
-      <Section
-        className="letter -rotate-1 text-teal-900"
-        title="Características del Servidor"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <D20_1 className="w-16 h-16 fill-red-700 mx-auto mb-2 hover:animate-spin " />
-            <h3 className="text-xl font-semibold mb-2">Aventuras Épicas</h3>
-            <p>
-              Misiones emocionantes y desafíos únicos te esperan en cada sesión.
-            </p>
-          </div>
-          <div className="text-center">
-            <Wizard className="w-16 h-16 fill-violet-700 stroke-violet-700 mx-auto mb-2 hover:animate-ping" />
-            <h3 className="text-xl font-semibold mb-2">Comunidad Acogedora</h3>
-            <p>
-              Únete a una comunidad amigable de jugadores apasionados por el
-              rol.
-            </p>
-          </div>
-          <div className="text-center">
-            <Scroll className="w-16 h-16 fill-yellow-600 mx-auto mb-2 hover:animate-bounce" />
-            <h3 className="text-xl font-semibold mb-2">Rico Rico Lore</h3>
-            <p>
-              Sumérgete en un mundo lleno de historias, misterios y magia por
-              descubrir.
-            </p>
-          </div>
-        </div>
-      </Section>
+      {/* FEATURES — full bleed dark grid */}
+      <FeatureGrid
+        eyebrow="Capítulo III"
+        title="Lo que vas a encontrar"
+        items={[
+          {
+            icon: <D20_1 className="w-16 h-16 fill-current" />,
+            title: 'Aventuras Épicas',
+            body:
+              'Misiones únicas, peligros reales y consecuencias que pesan. Cada sesión deja marca en el mundo.',
+          },
+          {
+            icon: <Wizard className="w-16 h-16 fill-current stroke-current" />,
+            title: 'Comunidad Acogedora',
+            body:
+              'Una mesa donde se ríe, se rolea y se respeta. Vengas con experiencia o sin ella, hay lugar para vos.',
+          },
+          {
+            icon: <Scroll className="w-16 h-16 fill-current" />,
+            title: 'Lore Vivo',
+            body:
+              'Faerûn como base, pero llena de homebrew, secretos y rumores que solo descubrirás aventurándote.',
+          },
+        ]}
+      />
 
-      <Section
-        className="letter rotate-0 text-blue-900 "
-        title="¿Listo para la Aventura?"
-      >
-        <p className="text-xl text-center mb-8">
-          Únete a nuestro servidor de Discord y comienza tu leyenda hoy mismo.
-        </p>
-        <Link
-          target="_blank"
-          href={LINKS.discordInvite}
-          className="btn btn-primary font-merriweather uppercase text-gray-700 md:mt-2 max-w-52 mx-auto "
-        >
-          <Discord />
-          Únete al Gremio
-        </Link>
-      </Section>
+      {/* FINAL CTA */}
+      <FinalCTA />
+
+      {/* Sticky Discord button */}
+      <StickyCTA />
     </main>
   );
 }
